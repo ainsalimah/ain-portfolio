@@ -1,0 +1,77 @@
+[
+  {
+    "id": "stokita",
+    "number": "01",
+    "name": "Stokita",
+    "category": "RETAIL OPERATIONS · FULL STACK",
+    "icon": "stock",
+    "image": "stokita.webp",
+    "alt": "Halaman publik Stokita dengan pilihan demo pemilik, manajer, dan staf",
+    "tone": "blue",
+    "headline": "Banyak cabang.\nSatu kendali.",
+    "description": "Operasional toko dalam satu tempat. Kelola stok per cabang, penjualan, transfer barang, pembelian, akses tim, dan laporan Excel.",
+    "tags": [
+      "React",
+      "Express",
+      "Prisma",
+      "PostgreSQL"
+    ],
+    "demo": "https://stokita-two.vercel.app",
+    "github": "https://github.com/ainsalimah/Stokita",
+    "problem": "Jaringan toko membutuhkan katalog yang konsisten, tetapi stok dan transaksi setiap cabang harus tetap terpisah. Pemilik dan tim cabang juga memiliki wewenang yang berbeda.",
+    "flow": "Kelola katalog → catat stok cabang → konfirmasi pesanan dan reservasi stok → catat pembayaran → selesaikan transaksi. Transfer dan pembelian melewati persetujuan pemilik; laporan tersedia per cabang dan seluruh jaringan.",
+    "decisions": "React dan Vite menangani antarmuka; Express menyediakan API. Transaksi Serializable menjaga perubahan stok dan pesanan. Peran serta cabang ditentukan dari sesi server. ExcelJS menghasilkan laporan pusat dan cabang.",
+    "limits": "Demo menyediakan ruang terpisah untuk tiap pengunjung selama 24 jam. Metode pembayaran dicatat di aplikasi; tidak diklaim sebagai integrasi payment gateway.",
+    "caption": "PILIHAN DEMO / SCREENSHOT HALAMAN PUBLIK"
+  },
+  {
+    "id": "lumiere",
+    "number": "02",
+    "name": "Lumiere",
+    "category": "FURNITURE · E-COMMERCE",
+    "icon": "chair",
+    "image": "lumiere.webp",
+    "alt": "Preview storefront Lumiere dengan gambar furnitur dari repositori proyek",
+    "tone": "sand",
+    "headline": "Dari menemukan,\nsampai memesan.",
+    "description": "Storefront furnitur dengan katalog, wishlist, keranjang, dan permintaan pesanan. Pengalaman pelanggan yang terhubung dengan workspace pemilik toko.",
+    "tags": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "PostgreSQL"
+    ],
+    "demo": "https://lumiere-furniture-khaki.vercel.app/",
+    "github": "https://github.com/ainsalimah/lumiere",
+    "problem": "Pelanggan perlu menemukan furnitur yang cocok, sementara pemilik toko perlu memastikan ketersediaan, pengiriman, dan detail pesanan sebelum menyetujui pembelian.",
+    "flow": "Jelajahi dan filter koleksi → pilih produk atau simpan ke wishlist → tambahkan ke keranjang → kirim permintaan pesanan → pemilik membuat penawaran ongkir dan estimasi, pelanggan menyetujui, lalu pemilik memperbarui status pengiriman.",
+    "decisions": "Next.js dan React membangun storefront dan workspace pemilik. Prisma menghubungkan data ke PostgreSQL di Neon. Validasi Zod menjaga input; autentikasi mendukung email/password dan Google. Pelanggan menyetujui penawaran ongkir dan estimasi sebelum pesanan diproses.",
+    "limits": "Proyek untuk portofolio dan pembelajaran. Pemesanan memakai konfirmasi pemilik untuk ketersediaan, ongkir, jadwal, dan metode pembayaran, bukan pembayaran checkout otomatis.",
+    "caption": "STOREFRONT / PREVIEW DENGAN ASET REPOSITORI"
+  },
+  {
+    "id": "clinic-care",
+    "number": "03",
+    "name": "Clinic Care",
+    "category": "HEALTHCARE · FULL STACK",
+    "icon": "clinic",
+    "image": "clinic-care.webp",
+    "alt": "Portal pasien Clinic Care dengan jadwal dokter dan ringkasan kunjungan",
+    "tone": "sage",
+    "headline": "Satu alur.\nSetiap peran terhubung.",
+    "description": "Dari pengajuan kunjungan hingga penyerahan obat. Aplikasi klinik dan apotek yang menghubungkan pasien, resepsionis, dokter, dan apoteker.",
+    "tags": [
+      "Next.js",
+      "TypeScript",
+      "Prisma",
+      "PostgreSQL"
+    ],
+    "demo": "https://clinic-care-zeta.vercel.app",
+    "github": "https://github.com/ainsalimah/clinic-care",
+    "problem": "Kunjungan klinik melewati beberapa meja. Status antrean, pemeriksaan, tagihan, dan obat perlu terhubung agar tiap peran mengetahui langkah berikutnya.",
+    "flow": "Pasien mengajukan kunjungan → resepsionis meninjau dan melakukan check-in → dokter mengisi SOAP dan resep → apoteker mencatat pembayaran simulasi dan menyerahkan obat.",
+    "decisions": "Next.js App Router menyatukan halaman dan API. PostgreSQL dan Prisma menjaga transaksi kunjungan, tagihan, dan stok. Advisory lock melindungi nomor antrean; snapshot tagihan mempertahankan rincian harga historis.",
+    "limits": "Demo portofolio dengan data fiktif, bukan layanan klinik nyata. Pembayaran merupakan simulasi; integrasi payment gateway, laboratorium, dan rawat inap belum tersedia.",
+    "caption": "PORTAL PASIEN / SCREENSHOT REPOSITORI"
+  }
+]

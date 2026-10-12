@@ -1,0 +1,11 @@
+{
+  "name": "ain-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "python scripts/build.py",
+    "dev": "python -m http.server 4173 --bind 127.0.0.1",
+    "check": "node --check app.js"
+  }
+}

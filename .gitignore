@@ -1,0 +1,8 @@
+.playwright-cli/
+output/
+node_modules/
+__pycache__/
+.vercel/
+.env
+.env.*
+*.tgz
