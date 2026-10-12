@@ -39,7 +39,8 @@ Screenshot Clinic Care berasal dari `docs/screenshots/patient.png`; Stokita diam
 ## GitHub dan Vercel
 
 Repositori: [ainsalimah/ain-portfolio](https://github.com/ainsalimah/ain-portfolio).
+Situs: [ain-portfolio-zeta.vercel.app](https://ain-portfolio-zeta.vercel.app/).
 
 Konfigurasi `vercel.json` menyajikan hasil HTML statis tanpa backend, install dependency, atau build di hosting. Sebelum push perubahan konten, jalankan `npm run build` dan `npm run check`, lalu commit `index.html` beserta sumbernya. `.vercelignore` membatasi upload ke file situs dan aset; file sumber dokumentasi serta hasil pengujian lokal tidak ikut disajikan.
 
-Gambar sosial lokal tersedia di `assets/social-card.png`. Jika memakai domain utama, gunakan URL absolut untuk `og:image`/`twitter:image` dan tambahkan canonical serta `og:url` sesuai domain tersebut.
+Gambar sosial lokal tersedia di `assets/social-card.png`. Canonical, `og:url`, serta URL gambar sosial menggunakan domain situs di atas. Jika domain berubah, perbarui metadata di `template.html` lalu jalankan build.
