@@ -36,6 +36,10 @@ Screenshot Clinic Care berasal dari `docs/screenshots/patient.png`; Stokita diam
 
 `npm run check` memeriksa sintaks JavaScript. Pemeriksaan browser mencakup ukuran 375, 768, 1024, dan 1440 piksel, studi kasus, keyboard, reduced motion, dan akses tanpa JavaScript.
 
-## Saat diterbitkan nanti
+## GitHub dan Vercel
 
-Situs ini belum dideploy. Setelah alamat publik ditentukan, gunakan URL absolut untuk `og:image`/`twitter:image` dan tambahkan canonical serta `og:url`. Gambar sosial lokal sudah tersedia di `assets/social-card.png`.
+Repositori: [ainsalimah/ain-portfolio](https://github.com/ainsalimah/ain-portfolio).
+
+Konfigurasi `vercel.json` menyajikan hasil HTML statis tanpa backend, install dependency, atau build di hosting. Sebelum push perubahan konten, jalankan `npm run build` dan `npm run check`, lalu commit `index.html` beserta sumbernya. `.vercelignore` membatasi upload ke file situs dan aset; file sumber dokumentasi serta hasil pengujian lokal tidak ikut disajikan.
+
+Gambar sosial lokal tersedia di `assets/social-card.png`. Jika memakai domain utama, gunakan URL absolut untuk `og:image`/`twitter:image` dan tambahkan canonical serta `og:url` sesuai domain tersebut.
