@@ -6,6 +6,7 @@ from html import escape
 
 ROOT = Path(__file__).resolve().parent.parent
 ICONS = {
+    'board': '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16m6-16v16M5.5 8h1M11.5 8h1M17.5 8h1M5.5 12h1m5 0h1m5 0h1"/>',
     'clinic': '<path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6z"/>',
     'chair': '<path d="M6 13V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8M4 11v6h16v-6M6 17v4m12-4v4M6 13h12"/>',
     'stock': '<path d="m12 2 8 4.5v9L12 20l-8-4.5v-9L12 2Zm0 9L4 6.5m8 4.5 8-4.5M12 11v9M8 4.3l8 4.5M2 20h4m12 0h4"/>',

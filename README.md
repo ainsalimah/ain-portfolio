@@ -1,6 +1,6 @@
 # Ain — Portofolio Full Stack Developer
 
-Portofolio statis berbahasa Indonesia untuk Stokita, Lumiere, dan Clinic Care. HTML, CSS, dan JavaScript native; tidak memakai backend atau database.
+Portofolio statis berbahasa Indonesia untuk DevTrack, Stokita, dan Lumiere. HTML, CSS, dan JavaScript native; tidak memakai backend atau database.
 
 ## Preview lokal
 
@@ -26,11 +26,11 @@ Seluruh konten dan studi kasus tetap tersedia tanpa JavaScript. Pengaturan reduc
 
 Informasi proyek berdasarkan README dan kode repositori:
 
-- https://github.com/ainsalimah/clinic-care
-- https://github.com/ainsalimah/lumiere
+- https://github.com/ainsalimah/devtrac
 - https://github.com/ainsalimah/Stokita
+- https://github.com/ainsalimah/lumiere
 
-Screenshot Clinic Care berasal dari `docs/screenshots/patient.png`; Stokita diambil dari halaman demo publik pada 11 Oktober 2026 tanpa membuat data baru. Preview Lumiere memakai halaman demo publik dengan gambar hero `public/images/hero/hero_1.png` dari repositori: URL gambar asli `/images/about/about-1.jpg` tidak tersedia, sehingga permintaan gambar tersebut diganti hanya di browser pengambilan screenshot. Preview ini diberi label aset repositori; deployment aslinya tidak diubah. Font Manrope disimpan lokal (SIL Open Font License).
+Screenshot DevTrack berasal dari `docs/screenshots/board.png` di repositori DevTrack dengan data demo fiktif. Stokita diambil dari halaman demo publik pada 11 Oktober 2026 tanpa membuat data baru. Preview Lumiere memakai halaman demo publik dengan gambar hero `public/images/hero/hero_1.png` dari repositori: URL gambar asli `/images/about/about-1.jpg` tidak tersedia, sehingga permintaan gambar tersebut diganti hanya di browser pengambilan screenshot. Preview ini diberi label aset repositori; deployment aslinya tidak diubah. Font Manrope disimpan lokal (SIL Open Font License).
 
 ## Pemeriksaan
 

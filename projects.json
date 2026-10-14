@@ -1,7 +1,32 @@
 [
   {
-    "id": "stokita",
+    "id": "devtrack",
     "number": "01",
+    "name": "DevTrack",
+    "category": "TEAM WORKFLOW · FULL STACK",
+    "icon": "board",
+    "image": "devtrack.png",
+    "alt": "Board DevTrack dengan kolom To do, In progress, In review, dan Done",
+    "tone": "lavender",
+    "headline": "Kerja tim jelas.\nReview sebelum selesai.",
+    "description": "Workspace proyek untuk membagi tugas, melacak progres, mengajukan hasil kerja, dan menyelesaikan pekerjaan setelah review.",
+    "tags": [
+      "React",
+      "TypeScript",
+      "Express",
+      "PostgreSQL"
+    ],
+    "demo": "https://devtrack-production-6fae.up.railway.app/",
+    "github": "https://github.com/ainsalimah/devtrac",
+    "problem": "Dalam proyek tim, penanggung jawab, progres, dan hasil review perlu terlihat jelas agar tugas tidak dinyatakan selesai sebelum diperiksa.",
+    "flow": "Admin membuat proyek → manajer mengatur anggota dan tugas → penanggung jawab mengirim tautan hasil → reviewer meminta revisi atau menyetujui → riwayat tetap tersimpan.",
+    "decisions": "React dan Vite membangun antarmuka. Express menyediakan API dengan pemeriksaan hak akses di server. Prisma dan PostgreSQL menyimpan tugas serta riwayat review. Socket.IO memberi tahu anggota saat data berubah.",
+    "limits": "Aplikasi online tidak mengisi akun demo. Pengunjung dapat membuat workspace sendiri. Undangan manual tersedia, sedangkan pengiriman email otomatis memerlukan domain pengirim terverifikasi.",
+    "caption": "BOARD TUGAS / SCREENSHOT DATA DEMO FIKTIF"
+  },
+  {
+    "id": "stokita",
+    "number": "02",
     "name": "Stokita",
     "category": "RETAIL OPERATIONS · FULL STACK",
     "icon": "stock",
@@ -26,7 +51,7 @@
   },
   {
     "id": "lumiere",
-    "number": "02",
+    "number": "03",
     "name": "Lumiere",
     "category": "FURNITURE · E-COMMERCE",
     "icon": "chair",
@@ -48,30 +73,5 @@
     "decisions": "Next.js dan React membangun storefront dan workspace pemilik. Prisma menghubungkan data ke PostgreSQL di Neon. Validasi Zod menjaga input; autentikasi mendukung email/password dan Google. Pelanggan menyetujui penawaran ongkir dan estimasi sebelum pesanan diproses.",
     "limits": "Proyek untuk portofolio dan pembelajaran. Pemesanan memakai konfirmasi pemilik untuk ketersediaan, ongkir, jadwal, dan metode pembayaran, bukan pembayaran checkout otomatis.",
     "caption": "STOREFRONT / PREVIEW DENGAN ASET REPOSITORI"
-  },
-  {
-    "id": "clinic-care",
-    "number": "03",
-    "name": "Clinic Care",
-    "category": "HEALTHCARE · FULL STACK",
-    "icon": "clinic",
-    "image": "clinic-care.webp",
-    "alt": "Portal pasien Clinic Care dengan jadwal dokter dan ringkasan kunjungan",
-    "tone": "sage",
-    "headline": "Satu alur.\nSetiap peran terhubung.",
-    "description": "Dari pengajuan kunjungan hingga penyerahan obat. Aplikasi klinik dan apotek yang menghubungkan pasien, resepsionis, dokter, dan apoteker.",
-    "tags": [
-      "Next.js",
-      "TypeScript",
-      "Prisma",
-      "PostgreSQL"
-    ],
-    "demo": "https://clinic-care-zeta.vercel.app",
-    "github": "https://github.com/ainsalimah/clinic-care",
-    "problem": "Kunjungan klinik melewati beberapa meja. Status antrean, pemeriksaan, tagihan, dan obat perlu terhubung agar tiap peran mengetahui langkah berikutnya.",
-    "flow": "Pasien mengajukan kunjungan → resepsionis meninjau dan melakukan check-in → dokter mengisi SOAP dan resep → apoteker mencatat pembayaran simulasi dan menyerahkan obat.",
-    "decisions": "Next.js App Router menyatukan halaman dan API. PostgreSQL dan Prisma menjaga transaksi kunjungan, tagihan, dan stok. Advisory lock melindungi nomor antrean; snapshot tagihan mempertahankan rincian harga historis.",
-    "limits": "Demo portofolio dengan data fiktif, bukan layanan klinik nyata. Pembayaran merupakan simulasi; integrasi payment gateway, laboratorium, dan rawat inap belum tersedia.",
-    "caption": "PORTAL PASIEN / SCREENSHOT REPOSITORI"
   }
 ]

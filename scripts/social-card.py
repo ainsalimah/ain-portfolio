@@ -14,6 +14,6 @@ d.text((60, 298), 'menjadi aplikasi.', font=font(82), fill='#C49A6C')
 for inset in range(0, 100, 20):
     d.ellipse((880+inset, 145, 1150-inset, 435), outline='#C49A6C', width=1)
 d.line((65, 492, 1135, 492), fill='#383630')
-d.text((65, 528), 'Stokita   /   Lumiere   /   Clinic Care', font=font(22), fill='#F3EFE6')
+d.text((65, 528), 'DevTrack   /   Stokita   /   Lumiere', font=font(22), fill='#F3EFE6')
 d.text((945, 536), 'Ain · 2026', font=font(18), fill='#C49A6C')
 im.save(root / 'assets/social-card.png', optimize=True)
