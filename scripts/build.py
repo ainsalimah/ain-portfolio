@@ -9,9 +9,10 @@ from struct import unpack
 ROOT = Path(__file__).resolve().parent.parent
 PROJECTS = json.loads((ROOT / 'projects.json').read_text(encoding='utf-8'))
 TECH = [
-    ('React', 'react'), ('TypeScript', 'typescript'), ('Next.js', 'nextjs'),
-    ('Node.js', 'nodejs'), ('PostgreSQL', 'postgresql'), ('Prisma', 'prisma'),
-    ('PHP', 'php'), ('MySQL', 'mysql'), ('Python', 'python'),
+    ('React', 'react'), ('TypeScript', 'typescript'), ('JavaScript', 'javascript'),
+    ('Tailwind CSS', 'tailwindcss'), ('Next.js', 'nextjs'), ('Node.js', 'nodejs'),
+    ('PostgreSQL', 'postgresql'), ('Prisma', 'prisma'), ('PHP', 'php'),
+    ('Laravel', 'laravel'), ('MySQL', 'mysql'), ('Python', 'python'),
 ]
 ICONS = {name: slug for name, slug in TECH}
 ICONS['Express'] = 'express'
@@ -78,7 +79,7 @@ def detail_page(project, next_project, styles_version, script_version):
   <header class="site-header wrap"><a class="wordmark" href="../../" aria-label="Ain, kembali ke beranda">ain</a><nav aria-label="Navigasi utama"><a href="../../#proyek">Semua proyek <span>04</span></a><a href="../../#tentang">Tentang</a><a href="../../#kontak" class="nav-contact">Kontak <span aria-hidden="true">↗</span></a></nav></header>
   <main id="main" class="detail-main">
     <div class="wrap detail-breadcrumb"><a href="../../#proyek">← Semua proyek</a><span>{e(p['number'])} / 04</span></div>
-    <section class="detail-hero wrap" aria-labelledby="detail-title"><p class="eyebrow">STUDI KASUS / {e(p['category'])}</p><div class="detail-hero-grid"><div><h1 id="detail-title">{e(p['name'])}<span class="title-period">.</span></h1><p class="detail-lead">{e(p['headline']).replace(chr(10), '<br>')}</p></div><div class="detail-hero-side"><p>{e(p['description'])}</p><ul class="tags" aria-label="Teknologi {e(p['name'])}">{tech_list(p['tags'], 2)}</ul><div class="detail-actions"><a class="button" href="{e(p['demo'])}" target="_blank" rel="noopener noreferrer">Coba aplikasi <span aria-hidden="true">↗</span><span class="sr-only"> (tab baru)</span></a><a class="subtle-link" href="{e(p['github'])}" target="_blank" rel="noopener noreferrer">Lihat kode ↗<span class="sr-only"> (tab baru)</span></a></div></div></div></section>
+    <section class="detail-hero wrap" aria-labelledby="detail-title"><p class="eyebrow">STUDI KASUS / {e(p['category'])}</p><div class="detail-hero-grid"><div><h1 id="detail-title">{e(p['name'])}</h1><p class="detail-lead">{e(p['headline']).replace(chr(10), '<br>')}</p></div><div class="detail-hero-side"><p>{e(p['description'])}</p><ul class="tags" aria-label="Teknologi {e(p['name'])}">{tech_list(p['tags'], 2)}</ul><div class="detail-actions"><a class="button" href="{e(p['demo'])}" target="_blank" rel="noopener noreferrer">Coba aplikasi <span aria-hidden="true">↗</span><span class="sr-only"> (tab baru)</span></a><a class="subtle-link" href="{e(p['github'])}" target="_blank" rel="noopener noreferrer">Lihat kode ↗<span class="sr-only"> (tab baru)</span></a></div></div></div></section>
     <div class="wrap"><figure class="detail-cover {e(p['tone'])}"><img src="{asset(p['image'], 2)}" alt="{e(p['alt'])}" fetchpriority="high"><figcaption>{e(p['caption'])}</figcaption></figure></div>
     <section class="detail-intro wrap" aria-labelledby="challenge-title"><div><p class="eyebrow">01 / KONTEKS</p><h2 id="challenge-title">Masalah yang<br><em>dipecahkan.</em></h2></div><p>{e(p['problem'])}</p></section>
     <section class="detail-story wrap" aria-labelledby="story-title"><div class="section-heading"><div><p class="eyebrow">02 / PRODUK</p><h2 id="story-title">Lihat alurnya,<br><em>langkah demi langkah.</em></h2></div><p>{e(p['flow'])}</p></div><div class="story-list">{gallery}</div></section>

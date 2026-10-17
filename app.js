@@ -33,10 +33,6 @@ function playHero() {
       { transform: 'translateY(0)', opacity: 1 }
     ], { duration: 1100, delay: index * 90, easing: 'cubic-bezier(.16,1,.3,1)' });
   });
-  animate(document.querySelector('.hero-art'), [
-    { transform: 'translateY(24px) scale(.9)', opacity: .15 },
-    { transform: 'translateY(0) scale(1)', opacity: 1 }
-  ], { duration: 1500, easing: 'cubic-bezier(.16,1,.3,1)' });
 }
 
 function observeSections() {
