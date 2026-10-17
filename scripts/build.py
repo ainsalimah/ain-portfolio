@@ -75,7 +75,7 @@ def detail_page(project, next_project, styles_version, script_version):
 </head>
 <body>
   <a class="skip-link" href="#main">Lewati ke konten utama</a>
-  <header class="site-header wrap"><a class="wordmark" href="../../" aria-label="Ain, kembali ke beranda">ain<span aria-hidden="true">✳</span></a><nav aria-label="Navigasi utama"><a href="../../#proyek">Semua proyek <span>04</span></a><a href="../../#tentang">Tentang</a><a href="../../#kontak" class="nav-contact">Kontak <span aria-hidden="true">↗</span></a></nav></header>
+  <header class="site-header wrap"><a class="wordmark" href="../../" aria-label="Ain, kembali ke beranda">ain</a><nav aria-label="Navigasi utama"><a href="../../#proyek">Semua proyek <span>04</span></a><a href="../../#tentang">Tentang</a><a href="../../#kontak" class="nav-contact">Kontak <span aria-hidden="true">↗</span></a></nav></header>
   <main id="main" class="detail-main">
     <div class="wrap detail-breadcrumb"><a href="../../#proyek">← Semua proyek</a><span>{e(p['number'])} / 04</span></div>
     <section class="detail-hero wrap" aria-labelledby="detail-title"><p class="eyebrow">STUDI KASUS / {e(p['category'])}</p><div class="detail-hero-grid"><div><h1 id="detail-title">{e(p['name'])}<span class="title-period">.</span></h1><p class="detail-lead">{e(p['headline']).replace(chr(10), '<br>')}</p></div><div class="detail-hero-side"><p>{e(p['description'])}</p><ul class="tags" aria-label="Teknologi {e(p['name'])}">{tech_list(p['tags'], 2)}</ul><div class="detail-actions"><a class="button" href="{e(p['demo'])}" target="_blank" rel="noopener noreferrer">Coba aplikasi <span aria-hidden="true">↗</span><span class="sr-only"> (tab baru)</span></a><a class="subtle-link" href="{e(p['github'])}" target="_blank" rel="noopener noreferrer">Lihat kode ↗<span class="sr-only"> (tab baru)</span></a></div></div></div></section>
@@ -85,7 +85,7 @@ def detail_page(project, next_project, styles_version, script_version):
     <section class="detail-notes" aria-label="Keputusan dan batasan proyek"><div class="wrap notes-grid"><div><p class="eyebrow">03 / DI BALIK LAYAR</p><h2>Yang membuatnya<br><em>bekerja.</em></h2></div><div class="note-list"><article><span>01</span><div><h3>Keputusan teknis</h3><p>{e(p['decisions'])}</p></div></article><article><span>02</span><div><h3>Catatan demo</h3><p>{e(p['limits'])}</p></div></article></div></div></section>
     <div class="wrap detail-end"><a class="text-link" href="../../#proyek">← Kembali ke semua proyek</a>{next_link}</div>
   </main>
-  <footer class="site-footer wrap"><a class="wordmark" href="../../" aria-label="Kembali ke beranda">ain<span aria-hidden="true">✳</span></a><div><a href="../../#kontak">Kontak ↗</a></div></footer>
+  <footer class="site-footer wrap"><a class="wordmark" href="../../" aria-label="Kembali ke beranda">ain</a><div><a href="../../#kontak">Kontak ↗</a></div></footer>
 </body></html>'''
 
 
