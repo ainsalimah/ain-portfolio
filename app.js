@@ -1,6 +1,8 @@
 const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
+const robot = document.querySelector('.robot-follow');
 let paused = preference.matches;
 let observer;
+let robotIdleTimer;
 const animations = new Set();
 const revealed = new WeakSet();
 let heroPlayed = false;
@@ -18,6 +20,8 @@ function applyMotionState() {
   if (paused) {
     animations.forEach(animation => animation.cancel());
     observer?.disconnect();
+    robot?.classList.remove('is-walking');
+    clearTimeout(robotIdleTimer);
   } else {
     playHero();
     observeSections();
@@ -53,6 +57,15 @@ function observeSections() {
 
 preference.addEventListener('change', event => { paused = event.matches; applyMotionState(); });
 applyMotionState();
+
+if (robot) {
+  window.addEventListener('scroll', () => {
+    if (paused) return;
+    robot.classList.add('is-walking');
+    clearTimeout(robotIdleTimer);
+    robotIdleTimer = setTimeout(() => robot.classList.remove('is-walking'), 220);
+  }, { passive: true });
+}
 
 // Existing study links still land on the right project; the full case is now visible.
 const selected = new URLSearchParams(window.location.search).get('studi');
