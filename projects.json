@@ -4,25 +4,24 @@
     "number": "01",
     "name": "DevTrack",
     "category": "TEAM WORKFLOW · FULL STACK",
-    "icon": "board",
-    "image": "devtrack.png",
-    "alt": "Board DevTrack dengan kolom To do, In progress, In review, dan Done",
+    "image": "devtrac-board.png",
+    "alt": "Board DevTrack memperlihatkan tugas pada kolom To do, In progress, In review, dan Done",
     "tone": "lavender",
-    "headline": "Kerja tim jelas.\nReview sebelum selesai.",
-    "description": "Workspace proyek untuk membagi tugas, melacak progres, mengajukan hasil kerja, dan menyelesaikan pekerjaan setelah review.",
-    "tags": [
-      "React",
-      "TypeScript",
-      "Express",
-      "PostgreSQL"
-    ],
+    "headline": "Kerja tim,\ndari tugas sampai review.",
+    "description": "Workspace proyek untuk membagi tugas, mengirim hasil kerja, meminta revisi, dan menyelesaikan pekerjaan setelah disetujui reviewer.",
+    "tags": ["React", "TypeScript", "Express", "Prisma", "PostgreSQL", "Socket.IO"],
     "demo": "https://devtrack-production-6fae.up.railway.app/",
     "github": "https://github.com/ainsalimah/devtrac",
-    "problem": "Dalam proyek tim, penanggung jawab, progres, dan hasil review perlu terlihat jelas agar tugas tidak dinyatakan selesai sebelum diperiksa.",
-    "flow": "Admin membuat proyek → manajer mengatur anggota dan tugas → penanggung jawab mengirim tautan hasil → reviewer meminta revisi atau menyetujui → riwayat tetap tersimpan.",
-    "decisions": "React dan Vite membangun antarmuka. Express menyediakan API dengan pemeriksaan hak akses di server. Prisma dan PostgreSQL menyimpan tugas serta riwayat review. Socket.IO memberi tahu anggota saat data berubah.",
-    "limits": "Aplikasi online tidak mengisi akun demo. Pengunjung dapat membuat workspace sendiri. Undangan manual tersedia, sedangkan pengiriman email otomatis memerlukan domain pengirim terverifikasi.",
-    "caption": "BOARD TUGAS / SCREENSHOT DATA DEMO FIKTIF"
+    "problem": "Pekerjaan tim sering tersebar di daftar tugas dan percakapan. Penanggung jawab, reviewer, serta manajer membutuhkan status dan riwayat keputusan yang jelas dalam satu workspace.",
+    "flow": "Manajer membuat tugas dan memilih penanggung jawab serta reviewer → developer menyelesaikan checklist dan mengirim hasil → reviewer menyetujui atau meminta revisi → tugas selesai atau kembali dikerjakan.",
+    "decisions": "React dan TypeScript membangun antarmuka; Express dan Zod menangani API serta validasi. Prisma dan PostgreSQL menyimpan tugas, versi pengajuan, dan aktivitas. Transaksi serializable serta pemeriksaan versi mencegah perubahan lama menimpa pekerjaan terbaru; Socket.IO memberi sinyal pembaruan.",
+    "limits": "Demo memakai workspace dan data fiktif yang terpisah untuk tiap pengunjung selama 24 jam. Demo tidak dapat mengirim undangan; pengunjung bisa berganti peran untuk mencoba alur review.",
+    "caption": "BOARD TUGAS / SCREENSHOT REPOSITORI",
+    "gallery": [
+      {"image": "devtrac-overview.png", "alt": "Ringkasan workspace DevTrack dengan tugas aktif, antrean review, progres proyek, dan aktivitas tim", "title": "Melihat prioritas tim", "caption": "Overview merangkum pekerjaan aktif, tugas yang menunggu review, dan aktivitas terbaru dalam satu layar."},
+      {"image": "devtrac-task-detail.png", "alt": "Detail tugas DevTrack dengan checklist, komentar, dan pengajuan hasil", "title": "Mencatat hasil kerja", "caption": "Detail tugas menempatkan checklist, diskusi, dan pengajuan hasil dalam konteks pekerjaan yang sama."},
+      {"image": "devtrac-review-workflow.png", "alt": "Alur review DevTrack saat reviewer memberi keputusan pada pengajuan kerja", "title": "Menutup tugas lewat review", "caption": "Pengajuan hasil diperiksa oleh reviewer yang berbeda dari penanggung jawab sebelum tugas dinyatakan selesai."}
+    ]
   },
   {
     "id": "stokita",
@@ -47,7 +46,11 @@
     "flow": "Kelola katalog → catat stok cabang → konfirmasi pesanan dan reservasi stok → catat pembayaran → selesaikan transaksi. Transfer dan pembelian melewati persetujuan pemilik; laporan tersedia per cabang dan seluruh jaringan.",
     "decisions": "React dan Vite menangani antarmuka; Express menyediakan API. Transaksi Serializable menjaga perubahan stok dan pesanan. Peran serta cabang ditentukan dari sesi server. ExcelJS menghasilkan laporan pusat dan cabang.",
     "limits": "Demo menyediakan ruang terpisah untuk tiap pengunjung selama 24 jam. Metode pembayaran dicatat di aplikasi; tidak diklaim sebagai integrasi payment gateway.",
-    "caption": "PILIHAN DEMO / SCREENSHOT HALAMAN PUBLIK"
+    "caption": "PILIHAN DEMO / SCREENSHOT HALAMAN PUBLIK",
+    "gallery": [
+      {"image": "stokita-dashboard.png", "alt": "Dashboard pemilik Stokita dengan ringkasan cabang, stok, pesanan, dan persetujuan", "title": "Memantau seluruh cabang", "caption": "Pemilik melihat kondisi jaringan dan pengajuan yang membutuhkan keputusan."},
+      {"image": "stokita-orders.png", "alt": "Halaman pesanan Stokita pada ruang demo", "title": "Mengelola pesanan", "caption": "Pesanan dan statusnya dicatat dalam alur operasional cabang."}
+    ]
   },
   {
     "id": "lumiere",
@@ -72,6 +75,40 @@
     "flow": "Jelajahi dan filter koleksi → pilih produk atau simpan ke wishlist → tambahkan ke keranjang → kirim permintaan pesanan → pemilik membuat penawaran ongkir dan estimasi, pelanggan menyetujui, lalu pemilik memperbarui status pengiriman.",
     "decisions": "Next.js dan React membangun storefront dan workspace pemilik. Prisma menghubungkan data ke PostgreSQL di Neon. Validasi Zod menjaga input; autentikasi mendukung email/password dan Google. Pelanggan menyetujui penawaran ongkir dan estimasi sebelum pesanan diproses.",
     "limits": "Proyek untuk portofolio dan pembelajaran. Pemesanan memakai konfirmasi pemilik untuk ketersediaan, ongkir, jadwal, dan metode pembayaran, bukan pembayaran checkout otomatis.",
-    "caption": "STOREFRONT / PREVIEW DENGAN ASET REPOSITORI"
+    "caption": "STOREFRONT / PREVIEW DENGAN ASET REPOSITORI",
+    "gallery": [
+      {"image": "lumiere-shop.png", "alt": "Katalog Lumiere dengan filter dan daftar produk", "title": "Menyaring pilihan", "caption": "Katalog menyediakan filter kategori, ruangan, harga, warna, dan material."},
+      {"image": "lumiere-product.png", "alt": "Detail produk furnitur pada Lumiere", "title": "Melihat detail produk", "caption": "Halaman produk menunjukkan material, ketersediaan, dan opsi keranjang; rincian ukuran masih perlu dikonfirmasi kepada pemilik."}
+    ]
+  },
+  {
+    "id": "clinic-care",
+    "number": "04",
+    "name": "Clinic Care",
+    "category": "HEALTHCARE · FULL STACK",
+    "icon": "clinic",
+    "image": "clinic-care.webp",
+    "alt": "Portal pasien Clinic Care dengan jadwal dokter dan ringkasan kunjungan",
+    "tone": "sage",
+    "headline": "Satu alur.\nSetiap peran terhubung.",
+    "description": "Dari pengajuan kunjungan hingga penyerahan obat. Aplikasi klinik dan apotek yang menghubungkan pasien, resepsionis, dokter, dan apoteker.",
+    "tags": [
+      "Next.js",
+      "TypeScript",
+      "Prisma",
+      "PostgreSQL"
+    ],
+    "demo": "https://clinic-care-zeta.vercel.app",
+    "github": "https://github.com/ainsalimah/clinic-care",
+    "problem": "Kunjungan klinik melewati beberapa meja. Status antrean, pemeriksaan, tagihan, dan obat perlu terhubung agar tiap peran mengetahui langkah berikutnya.",
+    "flow": "Pasien mengajukan kunjungan → resepsionis meninjau dan melakukan check-in → dokter mengisi SOAP dan resep → apoteker mencatat pembayaran simulasi dan menyerahkan obat.",
+    "decisions": "Next.js App Router menyatukan halaman dan API. PostgreSQL dan Prisma menjaga transaksi kunjungan, tagihan, dan stok. Advisory lock melindungi nomor antrean; snapshot tagihan mempertahankan rincian harga historis.",
+    "limits": "Demo portofolio dengan data fiktif, bukan layanan klinik nyata. Pembayaran merupakan simulasi; integrasi payment gateway, laboratorium, dan rawat inap belum tersedia.",
+    "caption": "PORTAL PASIEN / SCREENSHOT REPOSITORI",
+    "gallery": [
+      {"image": "clinic-care-receptionist.png", "alt": "Ruang kerja resepsionis Clinic Care", "title": "Resepsionis mengatur kedatangan", "caption": "Resepsionis meninjau kunjungan dan melakukan check-in sebelum pasien masuk ke antrean dokter."},
+      {"image": "clinic-care-doctor.png", "alt": "Ruang praktik dokter Clinic Care dengan antrean pasien dan akses ke SOAP serta resep", "title": "Dokter mencatat pemeriksaan", "caption": "Dokter melihat antrean, menulis catatan SOAP, dan menyiapkan resep."},
+      {"image": "clinic-care-pharmacy.png", "alt": "Ruang kerja apotek Clinic Care", "title": "Apotek menyelesaikan alur", "caption": "Apoteker menangani pembayaran simulasi dan penyerahan obat."}
+    ]
   }
 ]

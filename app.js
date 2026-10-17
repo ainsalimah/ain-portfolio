@@ -63,36 +63,7 @@ toggle?.addEventListener('click', () => { paused = !paused; applyMotionState(); 
 preference.addEventListener('change', event => { paused = event.matches; applyMotionState(); });
 applyMotionState();
 
-// A gentle visual response without scroll interception or layout measurements.
-const art = document.querySelector('.orbit-art');
-let scheduled = false;
-window.addEventListener('scroll', () => {
-  if (scheduled || paused) return;
-  scheduled = true;
-  requestAnimationFrame(() => {
-    if (art && !paused) art.style.transform = `translateY(${Math.min(window.scrollY, 700) * .035}px)`;
-    scheduled = false;
-  });
-}, { passive: true });
-preference.addEventListener('change', () => { if (art) art.style.transform = ''; });
-toggle?.addEventListener('click', () => { if (paused && art) art.style.transform = ''; });
-
-// Native details work without JS. With JS, case studies can also be deep-linked.
-document.querySelectorAll('.case-study').forEach(details => {
-  details.addEventListener('toggle', () => {
-    if (details.open) {
-      const url = new URL(window.location.href);
-      url.searchParams.set('studi', details.closest('article').id);
-      history.replaceState(null, '', url);
-    } else {
-      const url = new URL(window.location.href);
-      if (url.searchParams.get('studi') === details.closest('article').id) {
-        url.searchParams.delete('studi');
-        history.replaceState(null, '', url);
-      }
-    }
-  });
-});
+// Existing study links still land on the right project; the full case is now visible.
 const selected = new URLSearchParams(window.location.search).get('studi');
 const selectedArticle = [...document.querySelectorAll('.project')].find(article => article.id === selected);
-if (selectedArticle) selectedArticle.querySelector('details').open = true;
+if (selectedArticle) selectedArticle.scrollIntoView();
