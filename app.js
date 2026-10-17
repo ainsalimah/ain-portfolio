@@ -1,5 +1,4 @@
 const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
-const toggle = document.querySelector('#motion-toggle');
 let paused = preference.matches;
 let observer;
 const animations = new Set();
@@ -16,8 +15,6 @@ function animate(element, frames, options) {
 function applyMotionState() {
   document.body.classList.toggle('motion-paused', paused);
   document.body.classList.toggle('motion-enabled', !paused);
-  toggle?.setAttribute('aria-pressed', String(paused));
-  if (toggle) toggle.textContent = paused ? 'Aktifkan animasi' : 'Jeda animasi';
   if (paused) {
     animations.forEach(animation => animation.cancel());
     observer?.disconnect();
@@ -58,8 +55,6 @@ function observeSections() {
   });
 }
 
-if (toggle) toggle.hidden = false;
-toggle?.addEventListener('click', () => { paused = !paused; applyMotionState(); });
 preference.addEventListener('change', event => { paused = event.matches; applyMotionState(); });
 applyMotionState();
 

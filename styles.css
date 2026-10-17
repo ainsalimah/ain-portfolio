@@ -42,3 +42,5 @@ body{background:var(--bg);color:var(--paper);font-size:15px}::selection{backgrou
 /* Show complete project screens at their original proportions. */
 .project-visual>img,.detail-cover img,.story-image img{display:block;width:100%;height:auto;object-fit:contain;max-height:none}
 .project-visual>img,.detail-cover img{aspect-ratio:auto 1440/1000}
+.about-grid{align-items:start}.about-heading .eyebrow{margin-bottom:19px}.about-meta{margin-top:43px;padding-top:19px;border-top:1px solid var(--line);font-size:11px;line-height:1.7;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}.about-copy{padding-top:45px}
+@media(max-width:540px){.about-heading{margin-bottom:36px}.about-meta{margin-top:30px}.about-copy{padding-top:0}}

@@ -85,7 +85,7 @@ def detail_page(project, next_project, styles_version, script_version):
     <section class="detail-notes" aria-label="Keputusan dan batasan proyek"><div class="wrap notes-grid"><div><p class="eyebrow">03 / DI BALIK LAYAR</p><h2>Yang membuatnya<br><em>bekerja.</em></h2></div><div class="note-list"><article><span>01</span><div><h3>Keputusan teknis</h3><p>{e(p['decisions'])}</p></div></article><article><span>02</span><div><h3>Catatan demo</h3><p>{e(p['limits'])}</p></div></article></div></div></section>
     <div class="wrap detail-end"><a class="text-link" href="../../#proyek">← Kembali ke semua proyek</a>{next_link}</div>
   </main>
-  <footer class="site-footer wrap"><a class="wordmark" href="../../" aria-label="Kembali ke beranda">ain<span aria-hidden="true">✳</span></a><p>Portofolio Ain · 2026</p><div><button id="motion-toggle" type="button" aria-pressed="false" hidden>Jeda animasi</button><a href="../../#kontak">Kontak ↗</a></div></footer>
+  <footer class="site-footer wrap"><a class="wordmark" href="../../" aria-label="Kembali ke beranda">ain<span aria-hidden="true">✳</span></a><div><a href="../../#kontak">Kontak ↗</a></div></footer>
 </body></html>'''
 
 
