@@ -39,3 +39,6 @@ body{background:var(--bg);color:var(--paper);font-size:15px}::selection{backgrou
 .about-photo img{transform:scale(1.22) rotate(-8deg)}.story-image{display:block}.story-image:hover img{filter:brightness(.97)}.image-link{display:inline-block;margin-top:20px;border-bottom:1px solid var(--bronze);font-size:11px;font-weight:700;padding-bottom:5px}.image-link:hover{color:var(--bronze)}
 .tech-item img{transition:transform .25s ease}.tech-item:hover img{transform:translateY(-3px)}.story-image img{transition:filter .25s ease}
 .project-visual>img{height:auto}
+/* Show complete project screens at their original proportions. */
+.project-visual>img,.detail-cover img,.story-image img{display:block;width:100%;height:auto;object-fit:contain;max-height:none}
+.project-visual>img,.detail-cover img{aspect-ratio:auto 1440/1000}

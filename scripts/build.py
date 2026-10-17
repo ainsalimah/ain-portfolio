@@ -1,8 +1,10 @@
 """Build the static portfolio and four project case studies from projects.json."""
 import json
+from functools import cache
 from hashlib import sha256
 from html import escape
 from pathlib import Path
+from struct import unpack
 
 ROOT = Path(__file__).resolve().parent.parent
 PROJECTS = json.loads((ROOT / 'projects.json').read_text(encoding='utf-8'))
@@ -21,6 +23,16 @@ def e(value):
 
 def asset(path, depth=0):
     return f"{'../' * depth}assets/{e(path)}"
+
+
+@cache
+def image_dimensions(path):
+    """Read PNG dimensions so lazy screenshots reserve their correct space."""
+    with (ROOT / 'assets' / path).open('rb') as image:
+        header = image.read(24)
+    if header[:8] != b'\x89PNG\r\n\x1a\n':
+        raise ValueError(f'Expected a PNG gallery image: {path}')
+    return unpack('>II', header[16:24])
 
 
 def tech_icon(name, depth=0):
@@ -47,7 +59,7 @@ def project_card(project):
 
 def detail_page(project, next_project, styles_version, script_version):
     p = project
-    gallery = ''.join(f'''<figure class="story-step reveal"><div class="story-number">{index:02d} / {len(p['gallery']):02d}</div><a class="story-image {e(p['tone'])}" href="{asset(item['image'], 2)}" target="_blank" rel="noopener noreferrer" aria-label="Buka gambar penuh: {e(item['title'])}"><img src="{asset(item['image'], 2)}" alt="{e(item['alt'])}" loading="lazy"></a><figcaption><h3>{e(item['title'])}</h3><p>{e(item['caption'])}</p><a class="image-link" href="{asset(item['image'], 2)}" target="_blank" rel="noopener noreferrer">Lihat gambar penuh ↗<span class="sr-only"> (tab baru)</span></a></figcaption></figure>''' for index, item in enumerate(p['gallery'], 1))
+    gallery = ''.join(f'''<figure class="story-step reveal"><div class="story-number">{index:02d} / {len(p['gallery']):02d}</div><a class="story-image {e(p['tone'])}" href="{asset(item['image'], 2)}" target="_blank" rel="noopener noreferrer" aria-label="Buka gambar penuh: {e(item['title'])}"><img src="{asset(item['image'], 2)}" width="{image_dimensions(item['image'])[0]}" height="{image_dimensions(item['image'])[1]}" style="aspect-ratio:auto {image_dimensions(item['image'])[0]}/{image_dimensions(item['image'])[1]}" alt="{e(item['alt'])}" loading="lazy"></a><figcaption><h3>{e(item['title'])}</h3><p>{e(item['caption'])}</p><a class="image-link" href="{asset(item['image'], 2)}" target="_blank" rel="noopener noreferrer">Lihat gambar penuh ↗<span class="sr-only"> (tab baru)</span></a></figcaption></figure>''' for index, item in enumerate(p['gallery'], 1))
     next_link = f'<a class="next-project" href="../{e(next_project["id"])}/"><span>PROYEK BERIKUTNYA</span><strong>{e(next_project["name"])}</strong><span aria-hidden="true">↗</span></a>'
     return f'''<!doctype html>
 <html lang="id">
