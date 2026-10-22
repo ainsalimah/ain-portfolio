@@ -1,6 +1,6 @@
 # Ain — Portofolio Full Stack Developer
 
-Portofolio statis berbahasa Indonesia untuk DevTrack, Stokita, Lumiere, dan Clinic Care. HTML, CSS, dan JavaScript native; tidak memakai backend atau database.
+Portofolio statis berbahasa Indonesia untuk DevTrack, Stokita, Lumiere, NARA Atelier, dan Clinic Care. HTML, CSS, dan JavaScript native; tidak memakai backend atau database.
 
 ## Preview lokal
 
@@ -33,15 +33,17 @@ Informasi proyek berdasarkan README dan kode repositori:
 
 Screenshot DevTrack dan Clinic Care berasal dari `docs/screenshots` masing-masing repositori. Screenshot tambahan Stokita dan Lumiere diambil dari demo publik pada 17 Oktober 2026; Stokita memakai ruang demo pribadi dengan data fiktif. Preview lama tetap memakai aset yang sudah dijelaskan sebelumnya. Foto Ain berasal dari berkas pribadi yang diberikan pemilik portofolio. Logo teknologi disimpan lokal dari Devicon v2.17.0. Font Manrope disimpan lokal (SIL Open Font License).
 
+Screenshot NARA Atelier diambil dari build lokal proyek pada 22 Oktober 2026. NARA Atelier dan seluruh karya arsitektur di dalamnya merupakan konsep demonstrasi; sumber visual dan lisensinya disimpan pada manifest proyek asal.
+
 ## Pemeriksaan
 
-`npm run check` memeriksa sintaks JavaScript. Periksa halaman utama dan empat studi kasus pada ukuran desktop serta ponsel, tautan gambar penuh, keyboard, reduced motion, dan akses tanpa JavaScript.
+`npm run check` memeriksa sintaks JavaScript. Periksa halaman utama dan lima studi kasus pada ukuran desktop serta ponsel, tautan gambar penuh, keyboard, reduced motion, dan akses tanpa JavaScript.
 
 ## GitHub dan Vercel
 
 Repositori: [ainsalimah/ain-portfolio](https://github.com/ainsalimah/ain-portfolio).
 Situs: [ain-portfolio-zeta.vercel.app](https://ain-portfolio-zeta.vercel.app/).
 
-Konfigurasi `vercel.json` menyajikan hasil HTML statis tanpa backend, install dependency, atau build di hosting. Sebelum push perubahan konten, jalankan `npm run build` dan `npm run check`, lalu commit halaman utama, keempat halaman detail, aset, dan sumbernya. `.vercelignore` membatasi upload ke file situs dan aset; file sumber dokumentasi serta hasil pengujian lokal tidak ikut disajikan.
+Konfigurasi `vercel.json` menyajikan hasil HTML statis tanpa backend, install dependency, atau build di hosting. Sebelum push perubahan konten, jalankan `npm run build` dan `npm run check`, lalu commit halaman utama, kelima halaman detail, aset, dan sumbernya. `.vercelignore` membatasi upload ke file situs dan aset; file sumber dokumentasi serta hasil pengujian lokal tidak ikut disajikan.
 
 Gambar sosial lokal tersedia di `assets/social-card.png`. Canonical, `og:url`, serta URL gambar sosial menggunakan domain situs di atas. Jika domain berubah, perbarui metadata di `template.html` lalu jalankan build.

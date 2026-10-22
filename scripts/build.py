@@ -1,4 +1,4 @@
-"""Build the static portfolio and four project case studies from projects.json."""
+"""Build the static portfolio and project case studies from projects.json."""
 import json
 from functools import cache
 from hashlib import sha256
@@ -8,6 +8,7 @@ from struct import unpack
 
 ROOT = Path(__file__).resolve().parent.parent
 PROJECTS = json.loads((ROOT / 'projects.json').read_text(encoding='utf-8'))
+PROJECT_COUNT = f'{len(PROJECTS):02d}'
 TECH = [
     ('React', 'react'), ('TypeScript', 'typescript'), ('JavaScript', 'javascript'),
     ('Tailwind CSS', 'tailwindcss'), ('Next.js', 'nextjs'), ('Node.js', 'nodejs'),
@@ -49,17 +50,22 @@ def tech_list(tags, depth=0):
 
 def project_card(project):
     p = project
+    demo_label = p.get('demo_label', 'Coba aplikasi')
     return f'''<article class="project reveal" id="{e(p['id'])}">
-      <div class="project-top"><span class="project-index">{e(p['number'])} / 04</span><span class="eyebrow">{e(p['category'])}</span></div>
+      <div class="project-top"><span class="project-index">{e(p['number'])} / {PROJECT_COUNT}</span><span class="eyebrow">{e(p['category'])}</span></div>
       <div class="project-grid">
         <a class="project-visual {e(p['tone'])}" href="projects/{e(p['id'])}/" aria-label="Baca studi kasus {e(p['name'])}"><img src="{asset(p['image'])}" width="1440" height="1000" alt="{e(p['alt'])}" loading="lazy"><span class="visual-caption">{e(p['caption'])}</span></a>
-        <div class="project-copy"><p class="project-kicker">PROYEK PILIHAN — {e(p['number'])}</p><h3>{e(p['name'])}</h3><p class="project-headline">{e(p['headline']).replace(chr(10), '<br>')}</p><p class="description">{e(p['description'])}</p><div class="project-stack"><span>TEKNOLOGI UTAMA</span><ul class="tags" aria-label="Teknologi {e(p['name'])}">{tech_list(p['tags'])}</ul></div><div class="project-links"><a class="text-link" href="projects/{e(p['id'])}/">Baca studi kasus <span aria-hidden="true">↗</span></a><a class="source-link" href="{e(p['demo'])}" target="_blank" rel="noopener noreferrer">Coba aplikasi <span aria-hidden="true">↗</span><span class="sr-only"> {e(p['name'])} (tab baru)</span></a></div></div>
+        <div class="project-copy"><p class="project-kicker">PROYEK PILIHAN — {e(p['number'])}</p><h3>{e(p['name'])}</h3><p class="project-headline">{e(p['headline']).replace(chr(10), '<br>')}</p><p class="description">{e(p['description'])}</p><div class="project-stack"><span>TEKNOLOGI UTAMA</span><ul class="tags" aria-label="Teknologi {e(p['name'])}">{tech_list(p['tags'])}</ul></div><div class="project-links"><a class="text-link" href="projects/{e(p['id'])}/">Baca studi kasus <span aria-hidden="true">↗</span></a><a class="source-link" href="{e(p['demo'])}" target="_blank" rel="noopener noreferrer">{e(demo_label)} <span aria-hidden="true">↗</span><span class="sr-only"> {e(p['name'])} (tab baru)</span></a></div></div>
       </div>
     </article>'''
 
 
 def detail_page(project, next_project, styles_version, script_version):
     p = project
+    demo_label = p.get('demo_label', 'Coba aplikasi')
+    source_link = ''
+    if p.get('github'):
+        source_link = f'<a class="subtle-link" href="{e(p["github"])}" target="_blank" rel="noopener noreferrer">Lihat kode ↗<span class="sr-only"> (tab baru)</span></a>'
     gallery = ''.join(f'''<figure class="story-step reveal"><div class="story-number">{index:02d} / {len(p['gallery']):02d}</div><a class="story-image {e(p['tone'])}" href="{asset(item['image'], 2)}" target="_blank" rel="noopener noreferrer" aria-label="Buka gambar penuh: {e(item['title'])}"><img src="{asset(item['image'], 2)}" width="{image_dimensions(item['image'])[0]}" height="{image_dimensions(item['image'])[1]}" style="aspect-ratio:auto {image_dimensions(item['image'])[0]}/{image_dimensions(item['image'])[1]}" alt="{e(item['alt'])}" loading="lazy"></a><figcaption><h3>{e(item['title'])}</h3><p>{e(item['caption'])}</p><a class="image-link" href="{asset(item['image'], 2)}" target="_blank" rel="noopener noreferrer">Lihat gambar penuh ↗<span class="sr-only"> (tab baru)</span></a></figcaption></figure>''' for index, item in enumerate(p['gallery'], 1))
     next_link = f'<a class="next-project" href="../{e(next_project["id"])}/"><span>PROYEK BERIKUTNYA</span><strong>{e(next_project["name"])}</strong><span aria-hidden="true">↗</span></a>'
     return f'''<!doctype html>
@@ -76,10 +82,10 @@ def detail_page(project, next_project, styles_version, script_version):
 </head>
 <body>
   <a class="skip-link" href="#main">Lewati ke konten utama</a>
-  <header class="site-header wrap"><a class="wordmark" href="../../" aria-label="Ain, kembali ke beranda">ain</a><nav aria-label="Navigasi utama"><a href="../../#proyek">Semua proyek <span>04</span></a><a href="../../#tentang">Tentang</a><a href="../../#kontak" class="nav-contact">Kontak <span aria-hidden="true">↗</span></a></nav></header>
+  <header class="site-header wrap"><a class="wordmark" href="../../" aria-label="Ain, kembali ke beranda">ain</a><nav aria-label="Navigasi utama"><a href="../../#proyek">Semua proyek <span>{PROJECT_COUNT}</span></a><a href="../../#tentang">Tentang</a><a href="../../#kontak" class="nav-contact">Kontak <span aria-hidden="true">↗</span></a></nav></header>
   <main id="main" class="detail-main">
-    <div class="wrap detail-breadcrumb"><a href="../../#proyek">← Semua proyek</a><span>{e(p['number'])} / 04</span></div>
-    <section class="detail-hero wrap" aria-labelledby="detail-title"><p class="eyebrow">STUDI KASUS / {e(p['category'])}</p><div class="detail-hero-grid"><div><h1 id="detail-title">{e(p['name'])}</h1><p class="detail-lead">{e(p['headline']).replace(chr(10), '<br>')}</p></div><div class="detail-hero-side"><p>{e(p['description'])}</p><ul class="tags" aria-label="Teknologi {e(p['name'])}">{tech_list(p['tags'], 2)}</ul><div class="detail-actions"><a class="button" href="{e(p['demo'])}" target="_blank" rel="noopener noreferrer">Coba aplikasi <span aria-hidden="true">↗</span><span class="sr-only"> (tab baru)</span></a><a class="subtle-link" href="{e(p['github'])}" target="_blank" rel="noopener noreferrer">Lihat kode ↗<span class="sr-only"> (tab baru)</span></a></div></div></div></section>
+    <div class="wrap detail-breadcrumb"><a href="../../#proyek">← Semua proyek</a><span>{e(p['number'])} / {PROJECT_COUNT}</span></div>
+    <section class="detail-hero wrap" aria-labelledby="detail-title"><p class="eyebrow">STUDI KASUS / {e(p['category'])}</p><div class="detail-hero-grid"><div><h1 id="detail-title">{e(p['name'])}</h1><p class="detail-lead">{e(p['headline']).replace(chr(10), '<br>')}</p></div><div class="detail-hero-side"><p>{e(p['description'])}</p><ul class="tags" aria-label="Teknologi {e(p['name'])}">{tech_list(p['tags'], 2)}</ul><div class="detail-actions"><a class="button" href="{e(p['demo'])}" target="_blank" rel="noopener noreferrer">{e(demo_label)} <span aria-hidden="true">↗</span><span class="sr-only"> (tab baru)</span></a>{source_link}</div></div></div></section>
     <div class="wrap"><figure class="detail-cover {e(p['tone'])}"><img src="{asset(p['image'], 2)}" alt="{e(p['alt'])}" fetchpriority="high"><figcaption>{e(p['caption'])}</figcaption></figure></div>
     <section class="detail-intro wrap" aria-labelledby="challenge-title"><div><p class="eyebrow">01 / KONTEKS</p><h2 id="challenge-title">Masalah yang<br><em>dipecahkan.</em></h2></div><p>{e(p['problem'])}</p></section>
     <section class="detail-story wrap" aria-labelledby="story-title"><div class="section-heading"><div><p class="eyebrow">02 / PRODUK</p><h2 id="story-title">Lihat alurnya,<br><em>langkah demi langkah.</em></h2></div><p>{e(p['flow'])}</p></div><div class="story-list">{gallery}</div></section>

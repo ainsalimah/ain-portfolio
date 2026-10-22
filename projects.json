@@ -82,8 +82,37 @@
     ]
   },
   {
-    "id": "clinic-care",
+    "id": "nara-atelier",
     "number": "04",
+    "name": "NARA Atelier",
+    "category": "ARCHITECTURE · COMPANY PROFILE",
+    "image": "nara-home.webp",
+    "alt": "Beranda NARA Atelier menampilkan arsitektur tropis dengan tipografi editorial",
+    "tone": "sage",
+    "headline": "Ruang yang tenang,\ndiceritakan secara sinematik.",
+    "description": "Company profile multi-page untuk studio arsitektur fiktif di Bali dan Jakarta, lengkap dengan katalog proyek, case study, journal, layanan, dan inquiry WhatsApp.",
+    "tags": [
+      "React",
+      "JavaScript",
+      "Vite",
+      "GSAP"
+    ],
+    "demo": "https://arunaya-kissa-showcase-gvfyib6ml-ainsallpro.vercel.app/nara/",
+    "demo_label": "Kunjungi website",
+    "problem": "Studio arsitektur premium membutuhkan website yang dapat membangun rasa percaya melalui karya dan cara berpikir, tanpa terasa seperti katalog marketplace atau halaman penjualan yang agresif.",
+    "flow": "Pengunjung merasakan atmosfer studio dari hero sinematik → menjelajahi enam proyek dan case study → memahami filosofi, layanan, dan proses → membaca journal → mengirim brief melalui WhatsApp.",
+    "decisions": "Vite dan React Router membangun delapan route di bawah basename /nara. GSAP dan Lenis memberi reveal serta smooth scrolling yang tetap menghormati reduced motion. Data proyek, layanan, dan journal dipisahkan dari komponen; gambar responsif, poster video, focus state, serta fallback routing Vercel menjaga pengalaman lintas perangkat.",
+    "limits": "NARA Atelier, seluruh proyek, dan narasinya merupakan konsep demonstrasi. Form tidak menyimpan data; brief hanya dirangkai menjadi pesan WhatsApp. Visual menggunakan aset kurasi dengan sumber dan lisensi yang dipertahankan di manifest proyek.",
+    "caption": "HOME / COMPANY PROFILE ARSITEKTUR",
+    "gallery": [
+      {"image": "nara-home.png", "alt": "Hero NARA Atelier dengan navigasi transparan dan headline arsitektur", "title": "Membangun atmosfer sejak layar pertama", "caption": "Hero sinematik memperkenalkan positioning studio melalui fotografi besar, tipografi editorial, dan ajakan menjelajahi karya."},
+      {"image": "nara-project.png", "alt": "Halaman case study proyek Lembah Retreat di NARA Atelier", "title": "Memberi ruang untuk setiap karya", "caption": "Setiap proyek memiliki narasi konsep, metadata, galeri, material, respons terhadap tapak, dan navigasi ke proyek berikutnya."},
+      {"image": "nara-mobile-final.png", "alt": "Tampilan mobile beranda NARA Atelier", "title": "Tetap tenang di layar kecil", "caption": "Komposisi, navigasi, media, dan motion disusun ulang untuk ponsel tanpa kehilangan karakter editorialnya."}
+    ]
+  },
+  {
+    "id": "clinic-care",
+    "number": "05",
     "name": "Clinic Care",
     "category": "HEALTHCARE · FULL STACK",
     "icon": "clinic",
