@@ -82,32 +82,32 @@
     ]
   },
   {
-    "id": "nara-atelier",
+    "id": "landing-page-collection",
     "number": "04",
-    "name": "NARA Atelier",
-    "category": "ARCHITECTURE · COMPANY PROFILE",
-    "image": "nara-home.webp",
-    "alt": "Beranda NARA Atelier menampilkan arsitektur tropis dengan tipografi editorial",
+    "name": "Landing Page Collection",
+    "category": "WEB DESIGN · THREE LANDING PAGES",
+    "image": "landing-page-collection.webp",
+    "alt": "Showcase tiga landing page Arunaya Journeys, Kissa Japanese Dining, dan NARA Atelier",
     "tone": "sage",
-    "headline": "Ruang yang tenang,\ndiceritakan secara sinematik.",
-    "description": "Company profile multi-page untuk studio arsitektur fiktif di Bali dan Jakarta, lengkap dengan katalog proyek, case study, journal, layanan, dan inquiry WhatsApp.",
+    "headline": "Tiga identitas,\nsatu koleksi digital.",
+    "description": "Satu koleksi yang mempertemukan tiga karakter berbeda: perjalanan premium Arunaya, restoran Jepang Kissa, dan studio arsitektur NARA Atelier.",
     "tags": [
       "React",
       "JavaScript",
       "Vite",
       "GSAP"
     ],
-    "demo": "https://arunaya-kissa-showcase-gvfyib6ml-ainsallpro.vercel.app/nara/",
-    "demo_label": "Kunjungi website",
-    "problem": "Studio arsitektur premium membutuhkan website yang dapat membangun rasa percaya melalui karya dan cara berpikir, tanpa terasa seperti katalog marketplace atau halaman penjualan yang agresif.",
-    "flow": "Pengunjung merasakan atmosfer studio dari hero sinematik → menjelajahi enam proyek dan case study → memahami filosofi, layanan, dan proses → membaca journal → mengirim brief melalui WhatsApp.",
-    "decisions": "Vite dan React Router membangun delapan route di bawah basename /nara. GSAP dan Lenis memberi reveal serta smooth scrolling yang tetap menghormati reduced motion. Data proyek, layanan, dan journal dipisahkan dari komponen; gambar responsif, poster video, focus state, serta fallback routing Vercel menjaga pengalaman lintas perangkat.",
-    "limits": "NARA Atelier, seluruh proyek, dan narasinya merupakan konsep demonstrasi. Form tidak menyimpan data; brief hanya dirangkai menjadi pesan WhatsApp. Visual menggunakan aset kurasi dengan sumber dan lisensi yang dipertahankan di manifest proyek.",
-    "caption": "HOME / COMPANY PROFILE ARSITEKTUR",
+    "demo": "https://arunaya-kissa-showcase-gvfyib6ml-ainsallpro.vercel.app/",
+    "demo_label": "Buka koleksi",
+    "problem": "Tiga bisnis fiktif membutuhkan pengalaman digital yang terasa khas bagi audiensnya masing-masing, tanpa kehilangan standar responsivitas, aksesibilitas, performa, dan arah konversi yang jelas.",
+    "flow": "Pengunjung membuka satu halaman showcase → memilih Arunaya, Kissa, atau NARA → memasuki pengalaman yang sepenuhnya berbeda → menjelajahi konten dan menyelesaikan aksi utama setiap brand.",
+    "decisions": "Ketiga website berbagi pipeline Vite dan satu deployment, tetapi mempertahankan sistem visual serta interaksi yang berbeda. Arunaya memakai alur travel sinematik dan konsultasi WhatsApp; Kissa memakai editorial dining satu halaman; NARA memakai React Router, GSAP, Lenis, dan case study multi-page di bawah basename /nara.",
+    "limits": "Arunaya, Kissa, NARA Atelier, serta seluruh kontennya merupakan konsep demonstrasi. Data form tidak disimpan dan visual memakai aset kurasi. Preview koleksi masih menggunakan Vercel Deployment Protection sampai deployment production dipublikasikan.",
+    "caption": "SHOWCASE / THREE LANDING PAGES",
     "gallery": [
-      {"image": "nara-home.png", "alt": "Hero NARA Atelier dengan navigasi transparan dan headline arsitektur", "title": "Membangun atmosfer sejak layar pertama", "caption": "Hero sinematik memperkenalkan positioning studio melalui fotografi besar, tipografi editorial, dan ajakan menjelajahi karya."},
-      {"image": "nara-project.png", "alt": "Halaman case study proyek Lembah Retreat di NARA Atelier", "title": "Memberi ruang untuk setiap karya", "caption": "Setiap proyek memiliki narasi konsep, metadata, galeri, material, respons terhadap tapak, dan navigasi ke proyek berikutnya."},
-      {"image": "nara-mobile-final.png", "alt": "Tampilan mobile beranda NARA Atelier", "title": "Tetap tenang di layar kecil", "caption": "Komposisi, navigasi, media, dan motion disusun ulang untuk ponsel tanpa kehilangan karakter editorialnya."}
+      {"image": "arunaya-home.png", "alt": "Hero Arunaya Journeys dengan lanskap Indonesia dan ajakan merancang perjalanan", "title": "Arunaya Journeys", "caption": "Landing page travel premium yang membawa pengunjung dari eksplorasi destinasi dan pengalaman menuju konsultasi perjalanan tailor-made melalui WhatsApp."},
+      {"image": "kissa-home.png", "alt": "Hero Kissa Japanese Dining dengan suasana restoran Jepang yang gelap dan elegan", "title": "Kissa Japanese Dining", "caption": "Pengalaman editorial untuk restoran Jepang yang memadukan filosofi, menu musiman, cerita chef, suasana ruang, dan reservasi dalam satu halaman."},
+      {"image": "nara-home.png", "alt": "Hero NARA Atelier dengan arsitektur tropis dan tipografi editorial", "title": "NARA Atelier", "caption": "Company profile arsitektur multi-page dengan katalog karya, enam case study, filosofi studio, layanan, journal, dan inquiry WhatsApp."}
     ]
   },
   {
